@@ -3,7 +3,7 @@ terraform {
     bucket = "postech-soat10-bucket-fase5"
     key    = "github-actions-fiap/infra-dados/terraform.tfstate"
 
-    region  = var.region
+    region  = "us-west-2"
     encrypt = true
   }
 
