@@ -25,11 +25,18 @@ resource "aws_dynamodb_table" "file_uploads" {
     name               = "UserIdIndex"
     hash_key          = "userId"
     projection_type   = "ALL"
+
+    read_capacity   = 5
+    write_capacity  = 5
+
   }
 
   global_secondary_index {
     name     = "S3KeyIndex"
     hash_key = "s3Key"
     projection_type = "ALL"
+
+    read_capacity   = 5
+    write_capacity  = 5
   }
 }
