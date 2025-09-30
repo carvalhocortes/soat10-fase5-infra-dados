@@ -3,8 +3,8 @@ resource "aws_dynamodb_table" "file_uploads" {
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
-  
-  hash_key       = "fileId"
+
+  hash_key = "fileId"
 
   attribute {
     name = "fileId"
@@ -22,21 +22,21 @@ resource "aws_dynamodb_table" "file_uploads" {
   }
 
   global_secondary_index {
-    name               = "UserIdIndex"
-    hash_key          = "userId"
-    projection_type   = "ALL"
+    name            = "UserIdIndex"
+    hash_key        = "userId"
+    projection_type = "ALL"
 
-    read_capacity   = 5
-    write_capacity  = 5
+    read_capacity  = 5
+    write_capacity = 5
 
   }
 
   global_secondary_index {
-    name     = "S3KeyIndex"
-    hash_key = "s3Key"
+    name            = "S3KeyIndex"
+    hash_key        = "s3Key"
     projection_type = "ALL"
 
-    read_capacity   = 5
-    write_capacity  = 5
+    read_capacity  = 5
+    write_capacity = 5
   }
 }
