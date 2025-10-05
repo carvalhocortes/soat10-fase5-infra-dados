@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "fiap-terraform-backend"
+    bucket = "postech-soat10-fase5"
     key    = "github-actions-fiap/infra-dados/terraform.tfstate"
 
     region  = "us-west-2"
